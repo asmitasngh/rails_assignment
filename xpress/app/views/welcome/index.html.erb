@@ -1,0 +1,50 @@
+
+<% if user_signed_in? %>
+Welcome: <%= current_user.detail.firstname %>
+<% end -%>
+<script>
+	
+	$(function() {
+		$( "#tabs" ).tabs({
+			beforeLoad: function( event, ui ) {
+				ui.jqXHR.error(function() {
+					ui.panel.html("Couldn't load this tab. We'll try to fix this as soon as possible. If this wouldn't be 						a demo." );
+				});
+			}
+		});
+	});
+</script>
+
+<div id="tabs">
+<ul>
+<li><a href="#tabs-1">Home</a></li>
+<li><a href="#tabs-2">About Us</a></li>
+
+<li><a href="#tabs-3">Contact Us</a></li>
+
+
+</ul>
+<div id="tabs-1">
+<h2><center>Welcome to Library Management System</center></h2>
+<p> Welcome to  University Library System (ULS). Having more than 34 libraries in its fold, the ULS is accomplishing its task of reaching to wider academic community. We have advanced our web activity with the subscription of as good as 63 high quality electronic databases being made available through campus network to teachers, students and research scholars. In addition to this 21 more databases are also accessible through UGC-INFONET Digital Library Consortium. DULS also promotes Open Access e-resources. Our success lies on its use by the academic community of Delhi University. DULS is regularly conducting innovative Information Literacy Programs (ILP) for the benefit of students, researchers and Faculty members and also making efforts in developing tutorials to make the community proficient in the use of WWW. Our  OPAC is also being strengthened. We endeavor to further improve all our efforts to facilitate right information to the right user at the right time.
+
+ </p>
+</div>
+<div id="tabs-2">
+<p>An electronic library (colloquially referred to as a digital library) is a library in which collections are stored in electronic media formats (as opposed to print, microform, or other media) and accessible via computers.[1][not in citation given]The electronic content may be stored locally, or accessed remotely via computer networks. An electronic library is a type of information retrieval system.
+
+In the context of the DELOS, a Network of Excellence on Digital Libraries, and DL.org, a Coordination Action on Digital Library Interoperability, Best Practices and Modelling Foundations, Digital Library researchers and practitioners and software developer produced a Digital Library Reference Model[2][3] which defines a digital library as: "A potentially virtual organisation, that comprehensively collects, manages and preserves for the long depth of time rich digital content, and offers to its targeted user communities specialised functionality on that content, of defined quality and according to comprehensive codified policies."[4]
+
+The first use of the term digital library in print may have been in a 1988 report to the Corporation for National Research Initiatives[5][not in citation given] The term digital libraries was first popularized by the NSF/DARPA/NASA Digital Libraries Initiative in 1994.[6] These draw heavily on As We May Think by Vannevar Bush in 1945, which set out a vision not in terms of technology, but user experience.[7] The term virtual library was initially used interchangeably with digital library, but is now primarily used for libraries that are virtual in other senses (such as libraries which aggregate distributed content).</p>
+</div>
+<div id="tabs-3">
+<p><table>
+<tr><td>
+Asmita Singh
+Employee Id : 596852
+GG Vi
+</td></tr></table></p>
+</div>
+</div>
+
+

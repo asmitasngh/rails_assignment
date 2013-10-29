@@ -1,0 +1,44 @@
+
+<div id='he'><h2><center>LISTING REQUESTS</center></h2><hr /></div><br /><br />
+<table align='center' cellspacing='10px' border='0px'>
+  <thead>
+    <tr>
+      <th>Request status</th>
+      <th>User Id</th>
+      <th>Book Id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @requests.each do |request| %>
+      <tr>
+        <td><%= request.request_status %></td>
+        <td><%= request.user.id %></td>
+        <td><%= request.book_id %></td>
+	
+        <td><%= link_to 'Show', request %></td>
+        <td><%= link_to 'Edit', edit_request_path(request) %></td>
+        <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<td>
+<%
+	@detail.user_id=request.user_id
+	@detail=Detail.find(@detail.user_id)
+	firstname=@detail.firstname
+	num=@detail.noofbooksissued
+%>
+
+<%if num.to_i >= 3 %>
+<%= image_tag("index.jpg") %>
+<% end %>
+
+                </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

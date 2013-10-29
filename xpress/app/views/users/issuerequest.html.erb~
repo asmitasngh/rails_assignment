@@ -1,0 +1,20 @@
+
+<%if current_user.role.role!="admin"%>
+<%= link_to image_tag('homeicon.jpg'),users_userhome_path %>
+<%else%>
+<%= link_to image_tag('homeicon.jpg'),admincontroller_adminhome_path%>
+<%end%>
+<div id='he'><h2><center>AVAILABLE BOOKS</center></h2><hr /></div><br /><br />
+<% for book in @books.sort_by(&:book_title)  %>
+<%if(book.status=="Available")%>
+<table align='center' cellspacing='10px' border='0px'>
+<tr><td><a href="/books/<%=book.id%>"><%=book.book_title%></a></td></tr>
+
+<%end%>
+<%end%>
+
+</table>
+
+
+
+

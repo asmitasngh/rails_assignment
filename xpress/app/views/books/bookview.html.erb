@@ -1,0 +1,26 @@
+<script>
+$(function() {
+$( "#accordion" ).accordion();
+});
+</script>
+
+
+<div id="accordion">
+<h2 align='center'>LISTING BOOKS</h2>
+<div>
+
+<%= render 'index' %>
+
+
+</div>
+<h2 align='center'>EDITING BOOKS</h2>
+<div>
+<%= render 'edit' %>
+
+</div>
+
+<h2 align='center'>BOOK DETAILS</h2>
+<div>
+<%= render 'show' %>
+</div>
+

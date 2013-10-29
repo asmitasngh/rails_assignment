@@ -1,0 +1,5 @@
+
+<div id='he'><h2><center>NEW REQUESTS</center></h2><hr /></div><br /><br />
+
+<%= render 'form' %>
+

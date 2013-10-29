@@ -1,0 +1,20 @@
+
+<% for detail in @details.sort_by(&:firstname) %>
+<% for book in @books %>
+<%if(detail.user_id!=book.user_id)%>
+
+<%flag=1%>
+<%else%>
+<%flag=0%>
+<%end%>
+
+<%end%>
+<%if flag==1%>
+<table align="center">
+<tr><td><a href="/details/<%=detail.user_id%>"><%=detail.firstname%></a></td></tr>
+<%end%>
+
+<%end%>
+
+</table>
+

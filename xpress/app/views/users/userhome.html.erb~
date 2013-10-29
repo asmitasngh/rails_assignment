@@ -1,0 +1,21 @@
+<div id="content">
+<div id="he1">
+<br><br><br>
+<h2><center>Welcome  <%=current_user.detail.firstname %>!!<center></h2></div>
+</div>
+<div id="wrap1">
+<table align='center' cellspacing='10px' border='0px'>
+<tr>
+<td><a href="/details/<%=current_user.id%>">Show my details</a></td></tr>
+
+<tr><td>
+<%=link_to 'Raise Issue Request', users_issuerequest_path %></td></tr>
+
+</table>
+
+</div>
+
+
+
+
+

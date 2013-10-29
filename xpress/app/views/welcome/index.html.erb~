@@ -1,0 +1,22 @@
+<div id="content">
+<div id="he1">
+<% if user_signed_in? %>
+Welcome: <%= current_user.detail.firstname %>
+<%else%>
+<div id="he1"><h2><center>LIBRARY MANAGEMENT SYSTEM</center></h2></div>
+<% end -%>
+
+</div>
+
+
+
+
+<div id="wrap1">
+<ul>
+<li><%= link_to 'Registration',     new_user_registration_path %></li>
+<li><%=link_to 'Login', new_user_session_path %></li>
+</ul>
+</div>
+
+
+

@@ -1,0 +1,40 @@
+
+<%if current_user.role.role!="admin"%>
+<%= link_to image_tag('homeicon.jpg'),users_userhome_path %>
+<%else%>
+<%= link_to image_tag('homeicon.jpg'),admincontroller_adminhome_path%>
+<%end%>
+
+<div id='he'><h2><center>BOOK DETAILS</center></h2><hr /></div><br /><br />
+
+<%= form_tag(requests_neww_path, :method=>:post)%>
+<table align='center' width='720px' cellspacing='10px' border='0px'>
+
+<tr>
+<th><strong>Book Title</strong></th>
+<th><strong>Author name</strong></th>
+<th><strong>No of pages</strong></th>
+<th><strong>Book type</strong></th>
+<th><strong>Status</strong></th>
+<th width='30px'><strong>Book_id</strong></th>
+<th><strong>Release Date</strong></th></tr><tr>
+<td align="center"><%= @book.book_title %></td>
+<td align="center"><%= @book.author_name %></td>
+<td align="center"><%= @book.no_of_pages %></td>
+<td align="center"><%= @book.book_type %></td>
+<td align="center"><%= @book.status %></td>
+
+<td align="center"><input type='text' name='book_id' value='<%= @book.id %>' readonly='readonly'  style="display: inline-block; width:40px; border:transparent;background:#ECECEC"/></td>
+<td align="center"><%= @book.releasedate %></td>
+</tr></table>
+<table align='center' cellspacing='10px' border='0px'>
+<tr><td><td><td>
+<%if current_user.role.role=="admin"  %>
+<%= link_to 'Edit', edit_book_path(@book) %>
+ </td></td></td><td>
+<% else%>
+<%= submit_tag("Raise Issue Request") %></td><td>
+
+
+<%end%></td></tr></table>
+</form>

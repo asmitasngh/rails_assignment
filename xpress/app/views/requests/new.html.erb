@@ -1,0 +1,9 @@
+<%if current_user.role.role!="admin"%>
+<%= link_to image_tag('homeicon.jpg'),users_userhome_path %>
+<%else%>
+<%= link_to image_tag('homeicon.jpg'),admincontroller_adminhome_path%>
+<%end%>
+<div id='he'><h2><center>NEW REQUESTS</center></h2><hr /></div><br /><br />
+
+<%= render 'form' %>
+

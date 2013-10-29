@@ -1,0 +1,87 @@
+<div id="content">
+ <script>
+$(function() {
+$( "#accordion" ).accordion();
+});
+</script>
+
+<%if current_user.role.role=="admin"%>
+<%= link_to image_tag('homeicon.jpg'),admincontroller_adminhome_path %>
+<div id='he'><h2><center>USER DETAILS</center></h2><hr /></div><br /><br />
+<table align='center' cellspacing='10px' border='0px'>
+
+<tr><td>
+  <strong>First name:</strong></td><td>
+  <%= @detail.firstname %>
+</td></tr>
+
+<tr><td>
+  <strong>Last name:</strong></td><td>
+  <%= @detail.lastname %>
+</td></tr>
+
+<tr><td>
+  <strong>Address:</strong></td><td>
+  <%= @detail.address %>
+</td></tr>
+
+<tr><td>
+  <strong>Contact:</strong></td><td>
+  <%= @detail.contact %>
+</td></tr></table>
+
+<%else%>
+<div id="accordion">
+<h3>User Details</h3>
+<div>
+<p>
+  <strong>First name:</strong>
+  <%= @detail.firstname %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @detail.lastname %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @detail.address %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @detail.contact %>
+</p>
+</div>
+<%if current_user.role.role!="admin"%>
+
+<h3>Book Issue details</h3>
+<div>
+<p>
+<%= render 'show' %>
+
+</p>
+</div>
+<%end%>
+</div>
+<%end%>
+</div>
+<div id="wrap1">
+<%if current_user.role.role=="admin"%>
+<table align='center' cellspacing='10px' border='0px'>
+
+<tr><td>
+<%= link_to 'Manage Books', books_path %></td></tr>
+<tr><td>
+<%=link_to 'Approve Requests', requests_path %></td></tr>
+</table>
+<%else%>
+<table align='center' cellspacing='10px' border='0px'>
+<tr>
+<td><a href="/details/<%=current_user.id%>">Show my details</a></td></tr>
+<tr><td>
+<%=link_to 'Raise Issue Request', users_issuerequest_path %></td></tr>
+
+</table>
+<%end%></div>

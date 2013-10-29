@@ -1,0 +1,7 @@
+
+
+<div id='he'><h2><center>EDITING BOOKS</center></h2><hr /></div><br /><br />
+
+<%= render 'form' %>
+
+

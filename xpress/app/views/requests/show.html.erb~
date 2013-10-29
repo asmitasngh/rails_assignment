@@ -1,0 +1,28 @@
+
+<%if current_user.role.role!="admin"%>
+<%= link_to image_tag('homeicon.jpg'),users_userhome_path %>
+<%else%>
+<%= link_to image_tag('homeicon.jpg'),admincontroller_adminhome_path%>
+<%end%>
+<div id='he'><h2><center>REQUEST DETAILS</center></h2><hr /></div><br /><br />
+<table align='center' cellspacing='10px' border='0px'>
+
+<tr><td> <strong>Request status</strong></td>
+<td> <strong>User Id</strong></td>
+<td> <strong>Book Id</strong></td>
+
+</tr>
+<tr><td>  <%= @request.request_status %></td>
+<td><%= @request.user.id %></td>
+<td><%= @request.book_id %></td>
+</tr>
+</table>
+<table align='center' cellspacing='10px' border='0px'>
+<tr><td><td>
+
+<%if current_user.role.role=="admin"  %>
+<%= link_to 'Edit', edit_request_path(@request) %>
+ 
+
+<%end%></td></td></tr></table>
+
